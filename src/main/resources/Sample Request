@@ -1,0 +1,48 @@
+Sample Request:
+1> URL: http://localhost:8080/api/optimizer/optimize
+REQUEST:
+{
+    "stockWidth": 210,
+    "stockHeight": 297,
+    "requiredPieces": [
+        {
+            "width": 100,
+            "height": 50,
+            "quantity": 1
+        },
+        {
+            "width": 70,
+            "height": 70,
+            "quantity": 1
+        }
+    ]
+}
+
+RESPONSE:::
+{
+  "stockSheets": 
+    {"width": 210, "height": 297, "usedArea": 5500, "cutPieces": [{"width": 100, "height": 50}, {"width": 100, "height": 50}, {"width": 70, "height": 70}]}
+  ,
+  "totalWaste": 2679
+}
+
+
+
+2> http://localhost:8080/api/optimizer/generate-pdf
+
+{
+    "stockWidth": 210,
+    "stockHeight": 297,
+    "requiredPieces": [
+        {
+            "width": 100,
+            "height": 50,
+            "quantity": 3
+        },
+        {
+            "width": 70,
+            "height": 70,
+            "quantity": 2
+        }
+    ]
+}
